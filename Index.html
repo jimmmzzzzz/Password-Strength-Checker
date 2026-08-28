@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <div class="card">
+            <header class="card-header">
+                <h1>Password Checker</h1>
+                <p class="subtitle">Check the security and complexity of your password.</p>
+            </header>
+
+            <div class="input-group">
+                <div class="password-wrapper">
+                    <input 
+                        type="password" 
+                        id="passwordInput" 
+                        placeholder="Enter your password" 
+                        autocomplete="new-password"
+                        spellcheck="false"
+                    >
+                    <button type="button" id="togglePassword" aria-label="Show password">
+                        <svg class="eye-icon" id="eyeIcon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="strength-section">
+                <div class="strength-meter-container">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div>
+                <div class="strength-status">
+                    <span class="status-label">Strength</span>
+                    <span id="strengthText" class="status-value">—</span>
+                </div>
+            </div>
+
+            <div class="feedback-banner" id="feedbackBanner">
+                <span id="feedbackText">Enter a password to begin</span>
+            </div>
+
+            <ul class="requirements-list">
+                <li id="reqLength" class="requirement">
+                    <span class="bullet"></span> At least 8 characters
+                </li>
+                <li id="reqUpper" class="requirement">
+                    <span class="bullet"></span> One uppercase letter
+                </li>
+                <li id="reqLower" class="requirement">
+                    <span class="bullet"></span> One lowercase letter
+                </li>
+                <li id="reqNumber" class="requirement">
+                    <span class="bullet"></span> One number
+                </li>
+                <li id="reqSpecial" class="requirement">
+                    <span class="bullet"></span> One special character
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
