@@ -37,16 +37,16 @@
             </div>
 
             <div class="strength-section">
-                <div class="strength-meter-container">
+                <div class="strength-meter-container" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-describedby="strengthText">
                     <div class="strength-bar" id="strengthBar"></div>
                 </div>
                 <div class="strength-status">
                     <span class="status-label">Strength</span>
-                    <span id="strengthText" class="status-value">—</span>
+                    <span id="strengthText" class="status-value" aria-live="polite">—</span>
                 </div>
             </div>
 
-            <div class="feedback-banner" id="feedbackBanner">
+            <div class="feedback-banner" id="feedbackBanner" role="status" aria-live="polite">
                 <span id="feedbackText">Enter a password to begin</span>
             </div>
 
