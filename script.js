@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglePassword = document.getElementById('togglePassword');
     const eyeIcon = document.getElementById('eyeIcon');
     const strengthBar = document.getElementById('strengthBar');
+    const strengthMeter = document.querySelector('.strength-meter-container');
     const strengthText = document.getElementById('strengthText');
     const feedbackText = document.getElementById('feedbackText');
     const feedbackBanner = document.getElementById('feedbackBanner');
@@ -143,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         strengthBar.style.width = width;
         strengthBar.style.backgroundColor = color;
+        strengthMeter.setAttribute('aria-valuenow', String(parseInt(width, 10)));
         strengthText.textContent = text;
         strengthText.style.color = score > 0 ? color : 'var(--text-primary)';
         feedbackText.textContent = feedback;
@@ -151,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetUI() {
         strengthBar.style.width = '0%';
         strengthBar.style.backgroundColor = 'var(--color-empty)';
+        strengthMeter.setAttribute('aria-valuenow', '0');
         strengthText.textContent = '—';
         strengthText.style.color = 'var(--text-primary)';
         feedbackText.textContent = 'Enter a password to begin';
