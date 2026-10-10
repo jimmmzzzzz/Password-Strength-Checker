@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         strengthBar.style.width = width;
         strengthBar.style.backgroundColor = color;
         strengthMeter.setAttribute('aria-valuenow', String(parseInt(width, 10)));
+        strengthMeter.setAttribute('aria-valuetext', text === '—' ? 'No strength rating' : text);
         strengthText.textContent = text;
         strengthText.style.color = score > 0 ? color : 'var(--text-primary)';
         feedbackText.textContent = feedback;
@@ -154,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         strengthBar.style.width = '0%';
         strengthBar.style.backgroundColor = 'var(--color-empty)';
         strengthMeter.setAttribute('aria-valuenow', '0');
+        strengthMeter.setAttribute('aria-valuetext', 'No strength rating');
         strengthText.textContent = '—';
         strengthText.style.color = 'var(--text-primary)';
         feedbackText.textContent = 'Enter a password to begin';
