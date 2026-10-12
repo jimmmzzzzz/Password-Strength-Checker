@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Check individual criteria
-        const hasLength = password.length >= 8;
+        const characterCount = Array.from(password).length;
+        const hasLength = characterCount >= 8;
         const hasUpper = /[A-Z]/.test(password);
         const hasLower = /[a-z]/.test(password);
         const hasNumber = /[0-9]/.test(password);
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hasSpecial) score++;
 
         // Bonus for length > 12
-        if (password.length >= 12 && score === 5) {
+        if (characterCount >= 12 && score === 5) {
             score = 6;
         }
 
