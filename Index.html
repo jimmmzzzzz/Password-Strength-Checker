@@ -23,11 +23,12 @@
                     <input 
                         type="password" 
                         id="passwordInput" 
+                        aria-label="Password to check"
                         placeholder="Enter your password" 
                         autocomplete="new-password"
                         spellcheck="false"
                     >
-                    <button type="button" id="togglePassword" aria-label="Show password">
+                    <button type="button" id="togglePassword" aria-label="Show password" aria-pressed="false">
                         <svg class="eye-icon" id="eyeIcon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -37,7 +38,7 @@
             </div>
 
             <div class="strength-section">
-                <div class="strength-meter-container" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-describedby="strengthText">
+                <div class="strength-meter-container" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="No strength rating" aria-describedby="strengthText">
                     <div class="strength-bar" id="strengthBar"></div>
                 </div>
                 <div class="strength-status">
