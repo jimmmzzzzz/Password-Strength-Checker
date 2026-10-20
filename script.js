@@ -92,8 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let color = 'var(--color-empty)';
         let text = '—';
         let feedback = '';
+        const displayScore = checks.hasLength ? score : Math.min(score, 2);
 
-        switch (score) {
+        switch (displayScore) {
             case 1:
             case 2:
                 width = '25%';
