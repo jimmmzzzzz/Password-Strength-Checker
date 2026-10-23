@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check individual criteria
         const characterCount = Array.from(password).length;
         const hasLength = characterCount >= 8;
-        const hasUpper = /[A-Z]/.test(password);
-        const hasLower = /[a-z]/.test(password);
-        const hasNumber = /[0-9]/.test(password);
-        const hasSpecial = /[^A-Za-z0-9\s]/.test(password);
+        // Unicode-aware checks: non-Latin letters and digits are not symbols.
+        const hasUpper = /\p{Lu}/u.test(password);
+        const hasLower = /\p{Ll}/u.test(password);
+        const hasNumber = /\p{Nd}/u.test(password);
+        const hasSpecial = /[\p{P}\p{S}]/u.test(password);
 
         // Update UI checklist states
         updateRequirementItem(reqLength, hasLength);
