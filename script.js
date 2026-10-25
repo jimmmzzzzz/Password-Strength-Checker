@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hasNumber) score++;
         if (hasSpecial) score++;
 
-        // Bonus for length > 12
+        // Bonus for length >= 12
         if (characterCount >= 12 && score === 5) {
             score = 6;
         }
@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 text = 'Medium';
                 break;
             case 4:
+            case 5:
                 width = '75%';
                 color = 'var(--color-strong)';
                 text = 'Strong';
                 break;
-            case 5:
             case 6:
                 width = '100%';
                 color = 'var(--color-very-strong)';
@@ -140,8 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (!checks.hasSpecial) {
             feedback = 'Include a special character (e.g., @, #, $).';
             feedbackBanner.style.borderLeftColor = 'var(--color-medium)';
+        } else if (score < 6) {
+            feedback = 'Good character variety. Use at least 12 characters for stronger protection.';
+            feedbackBanner.style.borderLeftColor = 'var(--color-strong)';
         } else {
-            feedback = 'Excellent! Your password looks solid and secure.';
+            feedback = 'Excellent character variety and length. Avoid predictable patterns and reused passwords.';
             feedbackBanner.style.borderLeftColor = 'var(--color-strong)';
         }
 
